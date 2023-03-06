@@ -30,6 +30,10 @@ jobs:
         export PATH=/usr/local/bison/bin/:$PATH
         cmake -S ./ -B build -DCMAKE_BUILD_TYPE=Release -DEZVIS_BUILD_TESTS=ON
 
+    - name: CMake build
+      run: |
+        cmake --build build
+
     - name: CMake test
       run: |
         env CTEST_OUTPUT_ON_FAILURE=1
