@@ -28,8 +28,8 @@ jobs:
     - name: CMake config
       run: |
         export PATH=/usr/local/bison/bin/:$PATH
-        cmake -S ./ -B build -DCMAKE_BUILD_TYPE=Release
-        
+        cmake -S ./ -B build -DCMAKE_BUILD_TYPE=Release -DEZVIS_BUILD_TESTS=ON
+
     - name: CMake test
       run: |
         env CTEST_OUTPUT_ON_FAILURE=1
