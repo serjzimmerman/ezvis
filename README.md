@@ -99,4 +99,4 @@ float area(IShape &ref) {
 
 ## 1. How to use
 
-This library relies on (ctti)[https://github.com/Manu343726/ctti]. For example of how to use this library with CMake look at test/CMakeLists.txt. 
+This library relies on [ctti](https://github.com/Manu343726/ctti). For example of how to use this library with CMake look at test/CMakeLists.txt. 
