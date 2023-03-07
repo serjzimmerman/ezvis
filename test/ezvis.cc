@@ -16,7 +16,6 @@
 namespace {
 
 struct i_base : ezvis::visitable_base<i_base> {
-  EZVIS_VISITABLE();
   virtual ~i_base() {}
 };
 

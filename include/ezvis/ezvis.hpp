@@ -43,12 +43,14 @@ template <typename t_base> struct visitable_base {
 
   template <typename t_visitable>
   static constexpr detail::unique_tag_type
-  unique_tag_helper_ezviz__(const t_visitable * /* Dummy parameter for template deduction */) {
+  unique_tag_helper_ezviz__(const t_visitable * = nullptr /* Dummy parameter for template deduction */) {
     return detail::unique_tag<base_type, t_visitable>();
   }
 
+  virtual ezvis::detail::unique_tag_type unique_tag_ezvis__() const { return unique_tag_helper_ezviz__<t_base>(); }
+
 #define EZVIS_VISITABLE()                                                                                              \
-  virtual ezvis::detail::unique_tag_type unique_tag_ezvis__() const { return unique_tag_helper_ezviz__(this); }
+  virtual ezvis::detail::unique_tag_type unique_tag_ezvis__() const override { return unique_tag_helper_ezviz__(this); }
 };
 
 namespace detail {
